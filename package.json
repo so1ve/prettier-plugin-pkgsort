@@ -1,17 +1,25 @@
 {
-  "name": "pkg-name",
+  "name": "prettier-plugin-pkg",
   "version": "0.0.0",
   "packageManager": "pnpm@8.6.5",
   "author": "Ray <i@mk1.io> (@so1ve)",
-  "description": "",
-  "keywords": [],
-  "homepage": "https://github.com/so1ve/pkg-name#readme",
+  "description": "Use prettier-package-json to format your package.json.",
+  "keywords": [
+    "json",
+    "package-json",
+    "package",
+    "package-json",
+    "prettier",
+    "format",
+    "formatter"
+  ],
+  "homepage": "https://github.com/so1ve/prettier-plugin-pkg#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/so1ve/pkg-name.git"
+    "url": "git+https://github.com/so1ve/prettier-plugin-pkg.git"
   },
   "bugs": {
-    "url": "https://github.com/so1ve/pkg-name/issues"
+    "url": "https://github.com/so1ve/prettier-plugin-pkg/issues"
   },
   "license": "MIT",
   "sideEffects": false,
@@ -50,10 +58,14 @@
     "typecheck": "tsc --noEmit",
     "watch": "pkgroll --watch"
   },
+  "dependencies": {
+    "prettier-package-json": "^2.8.0"
+  },
   "devDependencies": {
     "@antfu/ni": "^0.21.3",
     "@so1ve/eslint-config": "^0.106.0",
     "@types/node": "^18.16.6",
+    "@types/prettier": "^2.7.3",
     "bumpp": "^9.1.0",
     "eslint": "^8.40.0",
     "pkgroll": "^1.10.0",
@@ -62,5 +74,8 @@
     "typescript": "^5.0.4",
     "vite": "^4.3.5",
     "vitest": "^0.32.0"
+  },
+  "peerDependencies": {
+    "prettier": "^2.8.8"
   }
 }

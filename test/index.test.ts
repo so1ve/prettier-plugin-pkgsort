@@ -1,7 +1,29 @@
+import { format } from "prettier";
 import { describe, expect, it } from "vitest";
 
+// TODO
+
 describe("should", () => {
-  it("exported", () => {
-    expect(1).toBe(1);
+  it("sort", () => {
+    expect(
+      format(
+        `
+{
+  "name": "foo",
+  "version": "1.0.0",
+
+  "dependencies": {
+
+   }
+  }
+  
+  
+  `,
+        {
+          plugins: ["."],
+          filepath: "foo/package.json",
+        },
+      ),
+    ).toMatchSnapshot();
   });
 });
