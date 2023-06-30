@@ -2,6 +2,8 @@
 
 [![NPM version](https://img.shields.io/npm/v/prettier-plugin-pkgsort?color=a1b858&label=)](https://www.npmjs.com/package/prettier-plugin-pkgsort)
 
+Use prettier-package-json to sort your package.json.
+
 ## 💎 Features
 
 - Consistent key order
