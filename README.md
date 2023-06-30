@@ -1,6 +1,6 @@
-# prettier-plugin-pkg
+# prettier-plugin-pkgsort
 
-[![NPM version](https://img.shields.io/npm/v/prettier-plugin-pkg?color=a1b858&label=)](https://www.npmjs.com/package/prettier-plugin-pkg)
+[![NPM version](https://img.shields.io/npm/v/prettier-plugin-pkgsort?color=a1b858&label=)](https://www.npmjs.com/package/prettier-plugin-pkgsort)
 
 ## 💎 Features
 
@@ -13,9 +13,9 @@
 ## 📦 Installation
 
 ```bash
-$ npm install prettier-plugin-pkg -D
-$ yarn add prettier-plugin-pkg -D
-$ pnpm add prettier-plugin-pkg -D
+$ npm install prettier-plugin-pkgsort -D
+$ yarn add prettier-plugin-pkgsort -D
+$ pnpm add prettier-plugin-pkgsort -D
 ```
 
 ## 🚀 Usage
@@ -25,7 +25,7 @@ $ pnpm add prettier-plugin-pkg -D
 module.exports = {
   plugins: [
     // Add this plugin to your prettier config
-    "prettier-plugin-pkg",
+    "prettier-plugin-pkgsort",
   ],
 };
 ```
@@ -35,8 +35,8 @@ module.exports = {
 ```ts
 // .prettierrc.js
 module.exports = {
-  pkgExpandUsers: true, // Expand users in author, contributors, and maintainers
-  pkgKeyOrder: [
+  pkgsortExpandUsers: true, // Expand users in author, contributors, and maintainers
+  pkgsortKeyOrder: [
     "name",
     "description",
     // ...

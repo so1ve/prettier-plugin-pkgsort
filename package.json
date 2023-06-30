@@ -1,5 +1,5 @@
 {
-  "name": "prettier-plugin-pkg",
+  "name": "prettier-plugin-pkgsort",
   "version": "0.1.0",
   "packageManager": "pnpm@8.6.5",
   "author": "Ray <i@mk1.io> (@so1ve)",
@@ -13,13 +13,13 @@
     "format",
     "formatter"
   ],
-  "homepage": "https://github.com/so1ve/prettier-plugin-pkg#readme",
+  "homepage": "https://github.com/so1ve/prettier-plugin-pkgsort#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/so1ve/prettier-plugin-pkg.git"
+    "url": "git+https://github.com/so1ve/prettier-plugin-pkgsort.git"
   },
   "bugs": {
-    "url": "https://github.com/so1ve/prettier-plugin-pkg/issues"
+    "url": "https://github.com/so1ve/prettier-plugin-pkgsort/issues"
   },
   "license": "MIT",
   "sideEffects": false,

@@ -27,8 +27,8 @@ export const parsers = {
       const formatOptions: Options = {
         useTabs: options.useTabs,
         tabWidth: options.tabWidth,
-        expandUsers: options.pkgExpandUsers ?? defaultOptions.expandUsers,
-        keyOrder: options.pkgKeyOrder ?? defaultOptions.keyOrder,
+        expandUsers: options.pkgsortExpandUsers ?? defaultOptions.expandUsers,
+        keyOrder: options.pkgsortKeyOrder ?? defaultOptions.keyOrder,
       };
 
       const shouldFormat = isPackageJson(options.filepath);
