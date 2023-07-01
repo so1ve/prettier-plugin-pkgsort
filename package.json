@@ -5,13 +5,13 @@
   "author": "Ray <i@mk1.io> (@so1ve)",
   "description": "Use prettier-package-json to sort your package.json.",
   "keywords": [
+    "format",
+    "formatter",
     "json",
-    "package-json",
     "package",
     "package-json",
-    "prettier",
-    "format",
-    "formatter"
+    "package-json",
+    "prettier"
   ],
   "homepage": "https://github.com/so1ve/prettier-plugin-pkgsort#readme",
   "repository": {
