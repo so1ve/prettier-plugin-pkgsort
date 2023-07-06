@@ -14,26 +14,26 @@ const parser = prettierParsers["json-stringify"];
 const isPackageJson = (path: string) => basename(path) === "package.json";
 
 export const parsers = {
-  "json-stringify": {
-    ...parser,
-    preprocess(text, options: PrettierOptions) {
-      // To avoid parsing errors
-      text = prettierFormat(text, { filepath: "package.json" });
+	"json-stringify": {
+		...parser,
+		preprocess(text, options: PrettierOptions) {
+			// To avoid parsing errors
+			text = prettierFormat(text, { filepath: "package.json" });
 
-      if (parser.preprocess) {
-        text = parser.preprocess(text, options);
-      }
+			if (parser.preprocess) {
+				text = parser.preprocess(text, options);
+			}
 
-      const formatOptions: Options = {
-        useTabs: options.useTabs,
-        tabWidth: options.tabWidth,
-        expandUsers: options.pkgsortExpandUsers ?? defaultOptions.expandUsers,
-        keyOrder: options.pkgsortKeyOrder ?? defaultOptions.keyOrder,
-      };
+			const formatOptions: Options = {
+				useTabs: options.useTabs,
+				tabWidth: options.tabWidth,
+				expandUsers: options.pkgsortExpandUsers ?? defaultOptions.expandUsers,
+				keyOrder: options.pkgsortKeyOrder ?? defaultOptions.keyOrder,
+			};
 
-      const shouldFormat = isPackageJson(options.filepath);
+			const shouldFormat = isPackageJson(options.filepath);
 
-      return shouldFormat ? format(JSON.parse(text), formatOptions) : text;
-    },
-  } as Parser,
+			return shouldFormat ? format(JSON.parse(text), formatOptions) : text;
+		},
+	} as Parser,
 };
