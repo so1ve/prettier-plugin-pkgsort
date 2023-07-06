@@ -25,10 +25,10 @@ $ pnpm add prettier-plugin-pkgsort -D
 ```ts
 // .prettierrc.js
 module.exports = {
-  plugins: [
-    // Add this plugin to your prettier config
-    "prettier-plugin-pkgsort",
-  ],
+	plugins: [
+		// Add this plugin to your prettier config
+		"prettier-plugin-pkgsort",
+	],
 };
 ```
 
@@ -37,12 +37,12 @@ module.exports = {
 ```ts
 // .prettierrc.js
 module.exports = {
-  pkgsortExpandUsers: true, // Expand users in author, contributors, and maintainers
-  pkgsortKeyOrder: [
-    "name",
-    "description",
-    // ...
-  ], // Order of keys
+	pkgsortExpandUsers: true, // Expand users in author, contributors, and maintainers
+	pkgsortKeyOrder: [
+		"name",
+		"description",
+		// ...
+	], // Order of keys
 };
 ```
 
