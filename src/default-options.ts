@@ -26,6 +26,7 @@ export const defaultOptions: Options = {
     "bin",
     "main",
     "module",
+    "browser",
     "unpkg",
     "jsdelivr",
     "types",
