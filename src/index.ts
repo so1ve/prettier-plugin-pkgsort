@@ -4,7 +4,8 @@ import type { Parser } from "prettier";
 import { parsers as prettierParsers } from "prettier/plugins/babel";
 import type { Options } from "prettier-package-json";
 import { format } from "prettier-package-json";
-import { createSyncFn } from 'synckit'
+import { createSyncFn } from "synckit";
+
 import { defaultOptions } from "./default-options";
 import type { PrettierOptions } from "./types";
 
@@ -17,7 +18,7 @@ export const parsers = {
     ...parser,
     preprocess(text, options: PrettierOptions) {
       if (!prettierFormat) {
-        prettierFormat = createSyncFn(require.resolve('./worker.cjs'));
+        prettierFormat = createSyncFn(require.resolve("./worker.cjs"));
       }
 
       // To avoid parsing errors

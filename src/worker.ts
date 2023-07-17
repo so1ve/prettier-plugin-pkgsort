@@ -1,6 +1,4 @@
-import { runAsWorker } from "synckit";
 import { format } from "prettier";
+import { runAsWorker } from "synckit";
 
-runAsWorker(async (code: string, options: any) => {
-  return await format(code, options);
-});
+runAsWorker(async (code: string, options: any) => await format(code, options));

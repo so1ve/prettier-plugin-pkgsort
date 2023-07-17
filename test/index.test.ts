@@ -5,8 +5,8 @@ import { describe, expect, it } from "vitest";
 
 describe("should", () => {
   it("sort", async () => {
-    expect(
-      await format(
+    await expect(
+      format(
         `
 {
   "name": "foo",
@@ -24,6 +24,6 @@ describe("should", () => {
           filepath: "foo/package.json",
         },
       ),
-    ).toMatchSnapshot();
+    ).resolves.toMatchSnapshot();
   });
 });

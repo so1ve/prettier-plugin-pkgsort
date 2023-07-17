@@ -1,7 +1,7 @@
 {
   "name": "prettier-plugin-pkgsort",
   "version": "0.2.0",
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.6.8",
   "author": "Ray <i@mk1.io> (@so1ve)",
   "description": "Use prettier-package-json to sort your package.json.",
   "keywords": [
@@ -64,17 +64,17 @@
     "synckit": "^0.8.5"
   },
   "devDependencies": {
-    "@antfu/ni": "^0.21.3",
-    "@so1ve/eslint-config": "^0.110.0",
+    "@antfu/ni": "^0.21.4",
+    "@so1ve/eslint-config": "^0.112.3",
     "@types/node": "^18.16.6",
-    "bumpp": "^9.1.0",
-    "eslint": "^8.40.0",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.45.0",
     "pkgroll": "^1.10.0",
     "prettier": "^3.0.0",
     "tsx": "^3.12.7",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.5",
-    "vitest": "^0.32.0"
+    "typescript": "^5.1.6",
+    "vite": "^4.4.4",
+    "vitest": "^0.33.0"
   },
   "peerDependencies": {
     "prettier": "^3.0.0"
