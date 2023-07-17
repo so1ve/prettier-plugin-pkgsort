@@ -4,9 +4,9 @@ import { describe, expect, it } from "vitest";
 // TODO
 
 describe("should", () => {
-  it("sort", () => {
+  it("sort", async () => {
     expect(
-      format(
+      await format(
         `
 {
   "name": "foo",
@@ -20,7 +20,7 @@ describe("should", () => {
   
   `,
         {
-          plugins: ["."],
+          plugins: ["./dist/index.cjs"],
           filepath: "foo/package.json",
         },
       ),

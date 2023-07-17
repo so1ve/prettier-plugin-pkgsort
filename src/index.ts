@@ -1,22 +1,25 @@
 import { basename } from "node:path";
 
 import type { Parser } from "prettier";
-import { format as prettierFormat } from "prettier";
-import { parsers as prettierParsers } from "prettier/parser-babel";
+import { parsers as prettierParsers } from "prettier/plugins/babel";
 import type { Options } from "prettier-package-json";
 import { format } from "prettier-package-json";
-
+import { createSyncFn } from 'synckit'
 import { defaultOptions } from "./default-options";
 import type { PrettierOptions } from "./types";
 
 const parser = prettierParsers["json-stringify"];
-
+let prettierFormat: (text: string, options: any) => string;
 const isPackageJson = (path: string) => basename(path) === "package.json";
 
 export const parsers = {
   "json-stringify": {
     ...parser,
     preprocess(text, options: PrettierOptions) {
+      if (!prettierFormat) {
+        prettierFormat = createSyncFn(require.resolve('./worker.cjs'));
+      }
+
       // To avoid parsing errors
       text = prettierFormat(text, { filepath: "package.json" });
 
