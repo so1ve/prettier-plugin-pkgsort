@@ -17,8 +17,10 @@ export const parsers = {
   "json-stringify": {
     ...parser,
     preprocess(text, options: PrettierOptions) {
-if(!isPackageJson(options.filepath)) return text
-      
+      if (!isPackageJson(options.filepath)) {
+        return text;
+      }
+
       if (!prettierFormat) {
         prettierFormat = createSyncFn(require.resolve("./worker.cjs"));
       }
@@ -37,7 +39,6 @@ if(!isPackageJson(options.filepath)) return text
         keyOrder: options.pkgsortKeyOrder ?? defaultOptions.keyOrder,
       };
 
-      
       return format(JSON.parse(text), formatOptions);
     },
   } as Parser,
