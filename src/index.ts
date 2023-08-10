@@ -17,7 +17,7 @@ export const parsers = {
 		...parser,
 		async parse(text, options: PrettierOptions) {
 			if (!isPackageJson(options.filepath)) {
-				return text;
+				return parser.parse(text, options);
 			}
 
 			// To avoid parsing errors
