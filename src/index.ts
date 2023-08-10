@@ -1,32 +1,27 @@
 import { basename } from "node:path";
 
 import type { Parser } from "prettier";
+import prettier from "prettier";
 import { parsers as prettierParsers } from "prettier/plugins/babel";
 import type { Options } from "prettier-package-json";
 import { format } from "prettier-package-json";
-import { createSyncFn } from "synckit";
 
 import { defaultOptions } from "./default-options";
 import type { PrettierOptions } from "./types";
 
 const parser = prettierParsers["json-stringify"];
-let prettierFormat: (text: string, options: any) => string;
 const isPackageJson = (path: string) => basename(path) === "package.json";
 
 export const parsers = {
-  "json-stringify": {
-    ...parser,
-    preprocess(text, options: PrettierOptions) {
-      if (!isPackageJson(options.filepath)) {
-        return text;
-      }
-
-      if (!prettierFormat) {
-        prettierFormat = createSyncFn(require.resolve("./worker.cjs"));
-      }
+	"json-stringify": {
+		...parser,
+		async parse(text, options: PrettierOptions) {
+			if (!isPackageJson(options.filepath)) {
+				return text;
+			}
 
 			// To avoid parsing errors
-			text = prettierFormat(text, { filepath: "package.json" });
+			text = await prettier.format(text, { filepath: "package.json" });
 
 			if (parser.preprocess) {
 				text = parser.preprocess(text, options);
@@ -39,7 +34,9 @@ export const parsers = {
 				keyOrder: options.pkgsortKeyOrder ?? defaultOptions.keyOrder,
 			};
 
-      return format(JSON.parse(text), formatOptions);
-    },
-  } as Parser,
+			text = format(JSON.parse(text), formatOptions);
+
+			return parser.parse(text, options);
+		},
+	} as Parser,
 };
