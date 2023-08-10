@@ -1,82 +1,83 @@
 {
-  "name": "prettier-plugin-pkgsort",
-  "version": "0.2.0",
-  "packageManager": "pnpm@8.6.12",
-  "author": "Ray <i@mk1.io> (@so1ve)",
-  "description": "Use prettier-package-json to sort your package.json.",
-  "keywords": [
-    "format",
-    "formatter",
-    "json",
-    "package",
-    "package-json",
-    "package-json",
-    "prettier"
-  ],
-  "homepage": "https://github.com/so1ve/prettier-plugin-pkgsort#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/so1ve/prettier-plugin-pkgsort.git"
-  },
-  "bugs": {
-    "url": "https://github.com/so1ve/prettier-plugin-pkgsort/issues"
-  },
-  "license": "MIT",
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.cjs"
-    },
-    "./worker": {
-      "require": "./dist/worker.cjs"
-    }
-  },
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "pkgroll",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "prepublishOnly": "nr build",
-    "release": "bumpp --commit --push --tag && pnpm publish",
-    "start": "tsx src/index.ts",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "watch": "pkgroll --watch"
-  },
-  "dependencies": {
-    "prettier-package-json": "^2.8.0",
-    "synckit": "^0.8.5"
-  },
-  "devDependencies": {
-    "@antfu/ni": "^0.21.4",
-    "@so1ve/eslint-config": "^0.112.3",
-    "@types/node": "^18.16.6",
-    "bumpp": "^9.1.1",
-    "eslint": "^8.45.0",
-    "pkgroll": "^1.10.0",
-    "prettier": "^3.0.0",
-    "tsx": "^3.12.7",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.4",
-    "vitest": "^0.33.0"
-  },
-  "peerDependencies": {
-    "prettier": "^3.0.0"
-  }
+	"name": "prettier-plugin-pkgsort",
+	"version": "0.2.0",
+	"packageManager": "pnpm@8.6.8",
+	"author": "Ray <i@mk1.io> (@so1ve)",
+	"description": "Use prettier-package-json to sort your package.json.",
+	"keywords": [
+		"format",
+		"formatter",
+		"json",
+		"package",
+		"package-json",
+		"package-json",
+		"prettier"
+	],
+	"homepage": "https://github.com/so1ve/prettier-plugin-pkgsort#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/so1ve/prettier-plugin-pkgsort.git"
+	},
+	"bugs": {
+		"url": "https://github.com/so1ve/prettier-plugin-pkgsort/issues"
+	},
+	"license": "MIT",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs"
+		},
+		"./worker": {
+			"require": "./dist/worker.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"types": "./dist/index.d.ts",
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/*",
+				"./dist/index.d.ts"
+			]
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "pkgroll",
+		"lint": "eslint . && prettier . --check",
+		"lint:fix": "eslint . --fix && prettier . --write",
+		"prepublishOnly": "nr build",
+		"release": "bumpp --commit --push --tag && pnpm publish",
+		"start": "tsx src/index.ts",
+		"test": "vitest",
+		"typecheck": "tsc --noEmit",
+		"watch": "pkgroll --watch"
+	},
+	"dependencies": {
+		"prettier-package-json": "^2.8.0",
+		"synckit": "^0.8.5"
+	},
+	"devDependencies": {
+		"@antfu/ni": "^0.21.4",
+		"@so1ve/eslint-config": "^0.119.1",
+		"@so1ve/prettier-config": "^0.119.1",
+		"@types/node": "^18.16.6",
+		"bumpp": "^9.1.1",
+		"eslint": "^8.45.0",
+		"pkgroll": "^1.10.0",
+		"prettier": "^3.0.0",
+		"tsx": "^3.12.7",
+		"typescript": "^5.1.6",
+		"vite": "^4.4.4",
+		"vitest": "^0.33.0"
+	},
+	"peerDependencies": {
+		"prettier": "^3.0.0"
+	}
 }
