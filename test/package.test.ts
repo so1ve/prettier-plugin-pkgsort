@@ -21,5 +21,5 @@ it("should be requireable", () => {
 it("should be resolvable", () => {
   const imported = require.resolve("..");
 
-  expect(imported).toMatch(/prettier-plugin-pkgsort\/dist\/index.cjs/);
+  expect(imported).toMatch(/prettier-plugin-pkgsort[/\\]dist[/\\]index.cjs$/);
 });
