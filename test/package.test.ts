@@ -1,4 +1,5 @@
 import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
 
 import { expect, it } from "vitest";
 
@@ -19,7 +20,11 @@ it("should be requireable", () => {
 });
 
 it("should be resolvable", () => {
-	const imported = require.resolve("..");
+	const actualPath = fileURLToPath(
+		new URL("../dist/index.cjs", import.meta.url),
+	);
 
-	expect(imported).toMatch(/prettier-plugin-pkgsort[/\\]dist[/\\]index.cjs$/);
+	const resolved = require.resolve("..");
+
+	expect(resolved).toEqual(actualPath);
 });
