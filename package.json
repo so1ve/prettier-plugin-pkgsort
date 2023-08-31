@@ -1,7 +1,7 @@
 {
 	"name": "prettier-plugin-pkgsort",
 	"version": "0.2.1",
-	"packageManager": "pnpm@8.7.0",
+	"packageManager": "pnpm@8.7.1",
 	"author": "Ray <i@mk1.io> (@so1ve)",
 	"description": "Use prettier-package-json to sort your package.json.",
 	"keywords": [
