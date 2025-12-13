@@ -34,6 +34,7 @@ export const defaultOptions: Options = {
 		"icon",
 		"files",
 		"engines",
+		"extensionKind",
 		"activationEvents",
 		"contributes",
 		"eslintConfig",
